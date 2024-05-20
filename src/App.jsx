@@ -38,11 +38,11 @@ function App() {
       살 이상
       <ul>
         {/* TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요. 동명이인은 없다고 가정합니다. ex) 홍길동 - Age: 24, Grade: A */}
-        {filteredStudents.map((student) => {
+        {filteredStudents.map((student, index) => {
           return (
-            <li
-              key={student.name}
-            >{`${student.name} - Age: ${student.age}, Grade: ${student.grade}`}</li>
+            <li key={index}>
+              {student.name} - Age: {student.age}, Grade: {student.grade}
+            </li>
           );
         })}
       </ul>
