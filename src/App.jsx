@@ -7,7 +7,9 @@ export default function App() {
   ];
 
   // TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
-  const filteredStudents = students.filter(/* 여기에 코드 작성 */);
+  const filteredStudents = students.filter((student) => {
+    return student.age >= 18;
+  });
 
   return (
     <div>
@@ -15,6 +17,20 @@ export default function App() {
       <ul>
         {/* TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
         {/* TODO: 학생이름을 클릭하면 나이와 점수가 alert 돼야 해요.*/}
+        {filteredStudents.map((student) => {
+          return (
+            <button
+              key={student.name}
+              onClick={() => {
+                alert(
+                  `이 학생의 나이는 ${student.age}세이고, 점수는 ${student.grade}입니다.`
+                );
+              }}
+            >
+              {student.name}
+            </button>
+          );
+        })}
       </ul>
     </div>
   );
