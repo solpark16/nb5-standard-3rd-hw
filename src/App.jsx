@@ -40,9 +40,9 @@ function App() {
         {/* TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요. 동명이인은 없다고 가정합니다. ex) 홍길동 - Age: 24, Grade: A */}
         {filteredStudents.map((student) => {
           return (
-            <p
+            <li
               key={student.name}
-            >{`${student.name} - Age: ${student.age}, Grade: ${student.grade}`}</p>
+            >{`${student.name} - Age: ${student.age}, Grade: ${student.grade}`}</li>
           );
         })}
       </ul>
