@@ -17,10 +17,10 @@ export default function App() {
       <ul>
         {/* TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
         {/* TODO: 학생이름을 클릭하면 나이와 점수가 alert 돼야 해요.*/}
-        {filteredStudents.map((student) => {
+        {filteredStudents.map((student, index) => {
           return (
-            <button
-              key={student.name}
+            <li
+              key={index}
               onClick={() => {
                 alert(
                   `이 학생의 나이는 ${student.age}세이고, 점수는 ${student.grade}입니다.`
@@ -28,7 +28,7 @@ export default function App() {
               }}
             >
               {student.name}
-            </button>
+            </li>
           );
         })}
       </ul>
